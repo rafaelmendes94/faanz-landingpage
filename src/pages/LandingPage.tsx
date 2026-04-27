@@ -204,7 +204,7 @@ const LandingPage = () => {
       {/* NAVBAR */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
-          <Link to="/landing-page" aria-label="Faanz Real Estate">
+          <Link to="/" aria-label="Faanz Real Estate">
             <Logo size="md" />
           </Link>
 
@@ -321,7 +321,7 @@ const LandingPage = () => {
                 Explorar oportunidades <ArrowRight className="h-4 w-4" />
               </a>
               <Link
-                to="/login"
+                to="/"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-10 py-3 text-sm font-semibold text-foreground shadow-soft transition-all hover:-translate-y-0.5"
               >
                 Já tenho conta
@@ -466,7 +466,7 @@ const LandingPage = () => {
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Imóveis em destaque</h2>
             <p className="mt-2 text-muted-foreground">As melhores oportunidades do momento</p>
           </div>
-          <Link to="/projetos" className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--brand-blue))]">
+          <Link to="/" className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--brand-blue))]">
             Ver todos <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -630,7 +630,7 @@ const LandingPage = () => {
                 </ul>
 
                 <Link
-                  to="/planos"
+                  to="/"
                   className={
                     "mt-7 inline-flex items-center justify-center rounded-full py-3 text-sm font-semibold transition-all active:scale-[0.98] " +
                     (isOuro
@@ -770,7 +770,7 @@ const LandingPage = () => {
                 Escolher meu plano <ArrowRight className="h-4 w-4" />
               </a>
               <Link
-                to="/login"
+                to="/"
                 className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-all hover:bg-white/20"
               >
                 Já tenho conta
