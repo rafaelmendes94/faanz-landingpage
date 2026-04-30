@@ -486,20 +486,17 @@ const LandingPage = () => {
           <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
             {STORIES.map((src, i) => (
               <div key={src} className="shrink-0 snap-start" style={{ width: "220px" }}>
-                {/* Header — avatar + handle (fora do vídeo, tom cinza) */}
-                <div className="mb-2 flex items-center gap-2 px-1">
-                  <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[1.5px]">
-                    <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
-                      <img
-                        src={faanzLogo}
-                        alt="Faanz"
-                        className="h-3.5 w-auto select-none"
-                        draggable={false}
-                      />
-                    </div>
-                  </div>
-                  <span className="text-xs font-semibold text-muted-foreground">@faanz</span>
-                  <span className="ml-auto text-[10px] font-medium text-muted-foreground/70">{i + 1}h</span>
+                {/* Dots de progresso fora do vídeo (estilo Insta) */}
+                <div className="mb-2 flex gap-1 px-1">
+                  {Array.from({ length: 5 }).map((_, idx) => (
+                    <span
+                      key={idx}
+                      className={
+                        "h-[3px] flex-1 rounded-full " +
+                        (idx === 0 ? "bg-foreground" : "bg-foreground/20")
+                      }
+                    />
+                  ))}
                 </div>
 
                 <article
@@ -525,17 +522,22 @@ const LandingPage = () => {
                       preload="metadata"
                       className="h-full w-full object-cover"
                     />
-                    {/* Instagram-style segmented progress bars */}
-                    <div className="absolute left-3 right-3 top-2.5 flex gap-1">
-                      {Array.from({ length: 5 }).map((_, idx) => (
-                        <span
-                          key={idx}
-                          className={
-                            "h-[2.5px] flex-1 rounded-full " +
-                            (idx === 0 ? "bg-white" : "bg-white/40")
-                          }
-                        />
-                      ))}
+                    {/* Subtle top overlay for legibility */}
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/40 to-transparent" />
+                    {/* Header — avatar + handle dentro do vídeo */}
+                    <div className="absolute left-3 right-3 top-3 flex items-center gap-2">
+                      <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[1.5px]">
+                        <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
+                          <img
+                            src={faanzLogo}
+                            alt="Faanz"
+                            className="h-3.5 w-auto select-none"
+                            draggable={false}
+                          />
+                        </div>
+                      </div>
+                      <span className="text-xs font-semibold text-white drop-shadow">@faanz.realestate</span>
+                      <span className="ml-auto text-[10px] font-medium text-white/80">{i + 1}h</span>
                     </div>
                   </div>
                 </article>
