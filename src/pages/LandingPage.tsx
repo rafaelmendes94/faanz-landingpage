@@ -188,6 +188,132 @@ const StoreButton = ({ store }: { store: "play" | "ios" }) => (
   </a>
 );
 
+const StoriesCarousel = () => {
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 1023px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const onScroll = () => {
+      const center = scroller.scrollLeft + scroller.clientWidth / 2;
+      let closest = 0;
+      let closestDist = Infinity;
+      Array.from(scroller.children).forEach((child, idx) => {
+        const el = child as HTMLElement;
+        const elCenter = el.offsetLeft + el.offsetWidth / 2;
+        const dist = Math.abs(center - elCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = idx;
+        }
+      });
+      setActiveIdx(closest);
+    };
+    scroller.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => scroller.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // No mobile só o ativo toca; no desktop todos tocam
+  useEffect(() => {
+    videoRefs.current.forEach((v, idx) => {
+      if (!v) return;
+      const shouldPlay = isMobile ? idx === activeIdx : true;
+      if (shouldPlay) {
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+        v.currentTime = 0;
+      }
+    });
+  }, [activeIdx, isMobile]);
+
+  return (
+    <div className="mt-10">
+      <div className="-mx-5 lg:mx-0">
+        <div
+          ref={scrollerRef}
+          className="flex gap-4 overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-hide lg:px-0"
+        >
+          {STORIES.map((src, i) => (
+            <article
+              key={src}
+              className="group relative shrink-0 snap-center overflow-hidden rounded-[28px] bg-foreground shadow-soft transition-transform hover:-translate-y-1 lg:hover:-translate-y-1"
+              style={{
+                width: isMobile ? "calc(100vw - 40px)" : "220px",
+                height: isMobile ? "min(72vh, 620px)" : "390px",
+              }}
+            >
+              {/* Instagram-style gradient ring */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-[2px] rounded-[30px] opacity-90"
+                style={{
+                  background:
+                    "conic-gradient(from 180deg at 50% 50%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #feda75)",
+                }}
+              />
+              <div className="relative h-full w-full overflow-hidden rounded-[26px] bg-foreground">
+                <video
+                  ref={(el) => (videoRefs.current[i] = el)}
+                  src={src}
+                  autoPlay={!isMobile || i === 0}
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="h-full w-full object-cover"
+                />
+                {/* Subtle top overlay for legibility */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/40 to-transparent" />
+                {/* Header — avatar + handle dentro do vídeo */}
+                <div className="absolute left-3 right-3 top-3 flex items-center gap-2">
+                  <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[1.5px]">
+                    <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
+                      <img
+                        src={faanzLogo}
+                        alt="Faanz"
+                        className="h-3.5 w-auto select-none"
+                        draggable={false}
+                      />
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold text-white drop-shadow">@faanz.realestate</span>
+                  <span className="ml-auto text-[10px] font-medium text-white/80">{i + 1}h</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      {/* Barrinhas segmentadas estilo stories do Insta — abaixo dos vídeos */}
+      <div className="mt-5 flex items-center justify-center gap-1.5 px-5">
+        {STORIES.map((_, i) => (
+          <span
+            key={i}
+            className={
+              "h-[3px] rounded-full transition-all duration-300 " +
+              (i === activeIdx ? "w-8 bg-foreground" : "w-5 bg-foreground/25")
+            }
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const LandingPage = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [menuOpen, setMenuOpen] = useState(false);
