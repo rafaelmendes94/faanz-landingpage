@@ -266,7 +266,7 @@ const LandingPage = () => {
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover lg:hidden"
-          style={{ objectPosition: "center -180px" }}
+          style={{ objectPosition: "center top" }}
         />
         <img
           src={heroBg}
