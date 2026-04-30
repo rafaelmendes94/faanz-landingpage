@@ -957,26 +957,8 @@ const LandingPage = () => {
               ))}
             </ul>
 
-            <div className="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {[
-                { value: "+12.500", label: "corretores ativos" },
-                { value: "R$ 250M+", label: "em transações" },
-                { value: "100%", label: "comissão paga no prazo" },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-2xl border border-border/60 bg-card px-4 py-4 shadow-soft"
-                >
-                  <div className="text-xl font-bold tracking-tight text-[hsl(var(--brand-blue))]">
-                    {s.value}
-                  </div>
-                  <div className="mt-1 text-xs text-muted-foreground">{s.label}</div>
-                </div>
-              ))}
-            </div>
-
             {/* Download buttons */}
-            <div className="mt-7 flex flex-wrap items-center gap-3">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#"
                 aria-label="Baixar na App Store"
