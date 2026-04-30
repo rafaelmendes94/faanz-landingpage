@@ -656,14 +656,16 @@ const LandingPage = () => {
 
       {/* IMÓVEIS EM DESTAQUE */}
       {/* DESTAQUES — Stories estilo Instagram */}
-      <section id="imoveis" className="mx-auto max-w-7xl px-5 py-10 lg:px-8 lg:py-24">
-        <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--brand-blue))]/20 bg-card px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--brand-blue))] shadow-soft">
-              <Sparkles className="h-3.5 w-3.5" /> Destaques
-            </span>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Destaques</h2>
-            <p className="mt-2 text-muted-foreground">Destaque dos empreendimentos disponíveis na plataforma</p>
+      <section id="imoveis" className="py-10 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--brand-blue))]/20 bg-card px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--brand-blue))] shadow-soft">
+                <Sparkles className="h-3.5 w-3.5" /> Destaques
+              </span>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Destaques</h2>
+              <p className="mt-2 text-muted-foreground">Destaque dos empreendimentos disponíveis na plataforma</p>
+            </div>
           </div>
         </div>
 
