@@ -482,61 +482,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="mt-10 -mx-5 px-5 lg:mx-0 lg:px-0">
-          <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
-            {STORIES.map((src, i) => (
-              <div key={src} className="shrink-0 snap-start" style={{ width: "220px" }}>
-                <article
-                  className="group relative overflow-hidden rounded-[28px] bg-foreground shadow-soft transition-transform hover:-translate-y-1"
-                  style={{ height: "390px" }}
-                >
-                  {/* Instagram-style gradient ring */}
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -inset-[2px] rounded-[30px] opacity-90"
-                    style={{
-                      background:
-                        "conic-gradient(from 180deg at 50% 50%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #feda75)",
-                    }}
-                  />
-                  <div className="relative h-full w-full overflow-hidden rounded-[26px] bg-foreground">
-                    <video
-                      src={src}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                      className="h-full w-full object-cover"
-                    />
-                    {/* Subtle top overlay for legibility */}
-                    <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/40 to-transparent" />
-                    {/* Header — avatar + handle dentro do vídeo */}
-                    <div className="absolute left-3 right-3 top-3 flex items-center gap-2">
-                      <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[1.5px]">
-                        <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
-                          <img
-                            src={faanzLogo}
-                            alt="Faanz"
-                            className="h-3.5 w-auto select-none"
-                            draggable={false}
-                          />
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-white drop-shadow">@faanz.realestate</span>
-                      <span className="ml-auto text-[10px] font-medium text-white/80">{i + 1}h</span>
-                    </div>
-                  </div>
-                </article>
-
-                {/* 1 dot por vídeo, abaixo do card */}
-                <div className="mt-3 flex justify-center">
-                  <span className="h-1.5 w-1.5 rounded-full bg-foreground/30" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <StoriesCarousel />
       </section>
 
       {/* MANIFESTO + VANTAGENS */}
