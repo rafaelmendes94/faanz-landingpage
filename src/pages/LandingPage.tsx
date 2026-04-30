@@ -457,43 +457,61 @@ const LandingPage = () => {
       </section>
 
       {/* IMÓVEIS EM DESTAQUE */}
+      {/* DESTAQUES — Stories estilo Instagram */}
       <section id="imoveis" className="mx-auto max-w-7xl px-5 py-10 lg:px-8 lg:py-24">
         <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--brand-blue))]/20 bg-card px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--brand-blue))] shadow-soft">
-              <Sparkles className="h-3.5 w-3.5" /> Catálogo
+              <Sparkles className="h-3.5 w-3.5" /> Destaques
             </span>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Imóveis em destaque</h2>
-            <p className="mt-2 text-muted-foreground">As melhores oportunidades do momento</p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Destaques</h2>
+            <p className="mt-2 text-muted-foreground">Os bastidores e melhores momentos da Faanz</p>
           </div>
-          <Link to="/" className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--brand-blue))]">
-            Ver todos <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {PROPERTIES.map((p) => (
-            <article key={p.name} className="group overflow-hidden rounded-[24px] border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:shadow-brand/30">
-              <div className="relative">
-                <img src={p.img} alt={p.name} width={800} height={500} loading="lazy" className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <span className="absolute left-3 top-3 rounded-full bg-gradient-brand px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white shadow-soft">{p.tag}</span>
-                <button className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-card/95 shadow-soft" aria-label="Favoritar">
-                  <Heart className="h-4 w-4" />
-                </button>
-              </div>
-              <div className="p-5">
-                <h3 className="text-base font-bold">{p.name}</h3>
-                <p className="mt-1 inline-flex items-center gap-1 text-xs text-muted-foreground"><MapPin className="h-3 w-3" />{p.city}</p>
-                <div className="mt-4 flex items-end justify-between">
-                  <div>
-                    <p className="text-[11px] text-muted-foreground">A partir de</p>
-                    <p className="text-lg font-bold text-[hsl(var(--brand-blue))]">{p.price}</p>
+        <div className="mt-10 -mx-5 px-5 lg:mx-0 lg:px-0">
+          <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
+            {STORIES.map((src, i) => (
+              <article
+                key={src}
+                className="group relative shrink-0 snap-start overflow-hidden rounded-[28px] bg-foreground shadow-soft transition-transform hover:-translate-y-1"
+                style={{ width: "220px", height: "390px" }}
+              >
+                {/* Instagram-style gradient ring */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -inset-[2px] rounded-[30px] opacity-90"
+                  style={{
+                    background:
+                      "conic-gradient(from 180deg at 50% 50%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #feda75)",
+                  }}
+                />
+                <div className="relative h-full w-full overflow-hidden rounded-[26px] bg-foreground">
+                  <video
+                    src={src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="h-full w-full object-cover"
+                  />
+                  {/* Subtle overlay */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
+                  {/* Header — avatar + handle (insta vibe) */}
+                  <div className="absolute left-3 right-3 top-3 flex items-center gap-2">
+                    <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[2px]">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-foreground">
+                        <Logo size="sm" />
+                      </div>
+                    </div>
+                    <span className="text-xs font-semibold text-white drop-shadow">@faanz</span>
+                    <span className="ml-auto text-[10px] font-medium text-white/80">{i + 1}h</span>
                   </div>
-                  <ArrowRight className="h-4 w-4 text-[hsl(var(--brand-blue))] transition-transform group-hover:translate-x-1" />
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
