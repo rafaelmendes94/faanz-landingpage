@@ -35,7 +35,7 @@ import dashboard from "@/assets/dashboard-building.jpg";
 import heroAthlete from "@/assets/landing-athlete.png";
 import heroSkyline from "@/assets/landing-skyline.png";
 import heroBg from "@/assets/hero-desktop.svg";
-import heroBgMobile from "@/assets/landing-hero-bg-mobile.png";
+import heroBgMobile from "@/assets/hero-mobile.jpg";
 import p1 from "@/assets/property-1.jpg";
 import p2 from "@/assets/property-2.jpg";
 import p3 from "@/assets/property-3.jpg";
