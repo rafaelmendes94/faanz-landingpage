@@ -764,6 +764,108 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* APP SHOWCASE */}
+      <section id="app" className="relative overflow-hidden bg-white py-20 lg:py-28">
+        {/* Subtle blue glow background */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(60% 50% at 75% 50%, hsl(var(--brand-blue) / 0.10), transparent 70%)",
+          }}
+        />
+
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
+          {/* LEFT — Content */}
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--brand-blue))]/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--brand-blue))]">
+              <Smartphone className="h-3.5 w-3.5" /> App Faanz
+            </span>
+
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[44px] lg:leading-[1.05]">
+              O app que transforma{" "}
+              <span className="bg-gradient-brand bg-clip-text text-transparent">oportunidades</span>{" "}
+              em comissões
+            </h2>
+
+            <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
+              Acesse um marketplace completo com lançamentos, pré-lançamentos e incorporações em um só lugar.
+            </p>
+
+            <ul className="mt-8 space-y-3.5">
+              {[
+                { icon: Layers, text: "Catálogo com bilhões em VGV" },
+                { icon: Sparkles, text: "Acesso antecipado a oportunidades exclusivas" },
+                { icon: FileCheck2, text: "Documentação completa e validada" },
+                { icon: Activity, text: "Acompanhamento em tempo real" },
+                { icon: Zap, text: "Recebimento rápido via PIX" },
+              ].map(({ icon: Icon, text }) => (
+                <li key={text} className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-[hsl(var(--brand-blue))]/10 text-[hsl(var(--brand-blue))]">
+                    <Icon className="h-3.5 w-3.5" />
+                  </span>
+                  <span className="text-[15px] text-foreground/90">{text}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {[
+                { value: "+12.500", label: "corretores ativos" },
+                { value: "R$ 250M+", label: "em transações" },
+                { value: "100%", label: "comissão paga no prazo" },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-2xl border border-border/60 bg-card px-4 py-4 shadow-soft"
+                >
+                  <div className="text-xl font-bold tracking-tight text-[hsl(var(--brand-blue))]">
+                    {s.value}
+                  </div>
+                  <div className="mt-1 text-xs text-muted-foreground">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT — Phone mockups */}
+          <div className="relative mx-auto flex h-[560px] w-full max-w-xl items-end justify-center lg:h-[620px]">
+            {/* Soft blue glow */}
+            <div
+              aria-hidden
+              className="absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 blur-3xl"
+              style={{
+                background:
+                  "radial-gradient(circle, hsl(var(--brand-blue) / 0.18), transparent 70%)",
+              }}
+            />
+
+            {/* Left phone */}
+            <PhoneFrame
+              className="absolute left-0 bottom-6 z-10 w-[180px] -rotate-[6deg] sm:w-[200px] lg:w-[220px]"
+            >
+              <PhoneScreenHome />
+            </PhoneFrame>
+
+            {/* Right phone */}
+            <PhoneFrame
+              className="absolute right-0 bottom-6 z-10 w-[180px] rotate-[6deg] sm:w-[200px] lg:w-[220px]"
+            >
+              <PhoneScreenEarnings />
+            </PhoneFrame>
+
+            {/* Center phone — main */}
+            <PhoneFrame
+              className="relative z-20 w-[230px] sm:w-[260px] lg:w-[290px]"
+              elevated
+            >
+              <PhoneScreenDetail />
+            </PhoneFrame>
+          </div>
+        </div>
+      </section>
+
       {/* PLANOS */}
       <section id="planos" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
