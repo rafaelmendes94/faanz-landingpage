@@ -486,19 +486,6 @@ const LandingPage = () => {
           <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
             {STORIES.map((src, i) => (
               <div key={src} className="shrink-0 snap-start" style={{ width: "220px" }}>
-                {/* Dots de progresso fora do vídeo (estilo Insta) */}
-                <div className="mb-2 flex gap-1 px-1">
-                  {Array.from({ length: 5 }).map((_, idx) => (
-                    <span
-                      key={idx}
-                      className={
-                        "h-[3px] flex-1 rounded-full " +
-                        (idx === 0 ? "bg-foreground" : "bg-foreground/20")
-                      }
-                    />
-                  ))}
-                </div>
-
                 <article
                   className="group relative overflow-hidden rounded-[28px] bg-foreground shadow-soft transition-transform hover:-translate-y-1"
                   style={{ height: "390px" }}
@@ -541,6 +528,11 @@ const LandingPage = () => {
                     </div>
                   </div>
                 </article>
+
+                {/* 1 dot por vídeo, abaixo do card */}
+                <div className="mt-3 flex justify-center">
+                  <span className="h-1.5 w-1.5 rounded-full bg-foreground/30" />
+                </div>
               </div>
             ))}
           </div>
