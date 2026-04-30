@@ -101,6 +101,18 @@ const PROPERTIES = [
   { name: "Sky Residence", city: "Brasília, DF", price: "R$ 1.800.000", tag: "Pré-lançamento", img: p3 },
 ];
 
+const STORIES = [
+  "/stories/story-1.mp4",
+  "/stories/story-2.mp4",
+  "/stories/story-3.mp4",
+  "/stories/story-4.mp4",
+  "/stories/story-5.mp4",
+  "/stories/story-6.mp4",
+  "/stories/story-7.mp4",
+  "/stories/story-8.mp4",
+  "/stories/story-9.mp4",
+];
+
 const NUMBERS = [
   { value: "R$ 10Bi", label: "VGV Disponível" },
   { value: "+500", label: "Empreendimentos" },
