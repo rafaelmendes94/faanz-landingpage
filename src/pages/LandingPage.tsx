@@ -247,17 +247,68 @@ const StoriesCarousel = () => {
     scroller.scrollBy({ left: dir * cardW, behavior: "smooth" });
   };
 
+  // Drag-to-scroll (mouse) — toque já é nativo
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    let isDown = false;
+    let startX = 0;
+    let startScroll = 0;
+    let moved = false;
+
+    const onDown = (e: MouseEvent) => {
+      isDown = true;
+      moved = false;
+      startX = e.pageX - scroller.offsetLeft;
+      startScroll = scroller.scrollLeft;
+      scroller.style.scrollSnapType = "none";
+    };
+    const onMove = (e: MouseEvent) => {
+      if (!isDown) return;
+      const x = e.pageX - scroller.offsetLeft;
+      const walk = x - startX;
+      if (Math.abs(walk) > 4) moved = true;
+      scroller.scrollLeft = startScroll - walk;
+    };
+    const onUp = () => {
+      if (!isDown) return;
+      isDown = false;
+      scroller.style.scrollSnapType = "";
+    };
+    const onClickCapture = (e: MouseEvent) => {
+      if (moved) {
+        e.preventDefault();
+        e.stopPropagation();
+        moved = false;
+      }
+    };
+
+    scroller.addEventListener("mousedown", onDown);
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    scroller.addEventListener("click", onClickCapture, true);
+    return () => {
+      scroller.removeEventListener("mousedown", onDown);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+      scroller.removeEventListener("click", onClickCapture, true);
+    };
+  }, []);
+
   return (
     <div className="relative mt-10">
       <div className="-mx-5 lg:mx-0">
         <div
           ref={scrollerRef}
-          className="flex cursor-grab gap-4 overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-hide active:cursor-grabbing lg:px-0"
+          className="flex cursor-grab select-none gap-4 overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-hide active:cursor-grabbing lg:px-0"
         >
           {STORIES.map((src, i) => (
             <article
               key={src}
-              className="group relative shrink-0 snap-center overflow-hidden rounded-[28px] bg-foreground shadow-soft"
+              className={
+                "group relative shrink-0 overflow-hidden rounded-[28px] bg-foreground shadow-soft " +
+                (i === STORIES.length - 1 ? "snap-end" : "snap-start lg:snap-start")
+              }
               style={{
                 width: isMobile ? "calc(100vw - 110px)" : "220px",
                 height: isMobile ? "min(70vh, 600px)" : "390px",
@@ -305,24 +356,6 @@ const StoriesCarousel = () => {
           ))}
         </div>
       </div>
-
-      {/* Setas de navegação — desktop */}
-      <button
-        type="button"
-        onClick={() => scrollByCard(-1)}
-        aria-label="Anterior"
-        className="absolute -left-4 top-[185px] hidden h-11 w-11 items-center justify-center rounded-full border border-border bg-card shadow-soft transition-all hover:-translate-y-0.5 hover:bg-background lg:flex"
-      >
-        <ArrowRight className="h-5 w-5 rotate-180" />
-      </button>
-      <button
-        type="button"
-        onClick={() => scrollByCard(1)}
-        aria-label="Próximo"
-        className="absolute -right-4 top-[185px] hidden h-11 w-11 items-center justify-center rounded-full border border-border bg-card shadow-soft transition-all hover:-translate-y-0.5 hover:bg-background lg:flex"
-      >
-        <ArrowRight className="h-5 w-5" />
-      </button>
 
       {/* Barrinhas segmentadas estilo stories do Insta — abaixo dos vídeos */}
       <div className="mt-5 flex items-center justify-center gap-1.5 px-5">
