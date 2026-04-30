@@ -399,7 +399,7 @@ const LandingPage = () => {
       </header>
 
       {/* HERO */}
-      <section id="inicio" className="relative overflow-hidden bg-white pb-32 lg:pb-40">
+      <section id="inicio" className="relative -mt-20 overflow-hidden bg-white pb-32 lg:mt-0 lg:pb-40">
         <img
           src={heroBgMobile}
           alt=""
