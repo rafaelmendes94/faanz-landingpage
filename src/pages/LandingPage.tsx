@@ -29,6 +29,17 @@ import {
   Youtube,
   Zap,
 } from "lucide-react";
+import {
+  Bell,
+  FileCheck2,
+  Search,
+  Activity,
+  Home as HomeIcon,
+  Heart as HeartIcon,
+  Bed,
+  Bath,
+  Square as SquareIcon,
+} from "lucide-react";
 import Logo from "@/components/Logo";
 import faanzLogo from "@/assets/faanz-logo.png";
 import ambassador from "@/assets/landing-ambassador.jpg";
