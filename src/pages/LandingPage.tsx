@@ -251,8 +251,8 @@ const StoriesCarousel = () => {
               key={src}
               className="group relative shrink-0 snap-center overflow-hidden rounded-[28px] bg-foreground shadow-soft transition-transform hover:-translate-y-1 lg:hover:-translate-y-1"
               style={{
-                width: isMobile ? "calc(100vw - 40px)" : "220px",
-                height: isMobile ? "min(72vh, 620px)" : "390px",
+                width: isMobile ? "calc(100vw - 80px)" : "220px",
+                height: isMobile ? "min(70vh, 600px)" : "390px",
               }}
             >
               {/* Instagram-style gradient ring */}
