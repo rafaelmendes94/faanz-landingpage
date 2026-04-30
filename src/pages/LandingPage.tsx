@@ -34,7 +34,7 @@ import ambassador from "@/assets/landing-ambassador.jpg";
 import dashboard from "@/assets/dashboard-building.jpg";
 import heroAthlete from "@/assets/landing-athlete.png";
 import heroSkyline from "@/assets/landing-skyline.png";
-import heroBg from "@/assets/landing-hero-bg.png";
+import heroBg from "@/assets/hero-desktop.png";
 import heroBgMobile from "@/assets/landing-hero-bg-mobile.png";
 import p1 from "@/assets/property-1.jpg";
 import p2 from "@/assets/property-2.jpg";
