@@ -1002,7 +1002,7 @@ const LandingPage = () => {
             <img
               src={appMockup}
               alt="Aplicativo Faanz Real Estate em três telas: Meus Projetos, Investir e catálogo de imóveis"
-              className="relative z-10 w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(15,23,42,0.18)]"
+              className="relative z-10 w-[115%] max-w-none h-auto object-contain animate-[float_6s_ease-in-out_infinite] drop-shadow-[0_50px_70px_rgba(29,78,216,0.25)] lg:w-[120%]"
               loading="lazy"
             />
           </div>
