@@ -249,9 +249,9 @@ const StoriesCarousel = () => {
           {STORIES.map((src, i) => (
             <article
               key={src}
-              className="group relative shrink-0 snap-center overflow-hidden rounded-[28px] bg-foreground shadow-soft transition-transform hover:-translate-y-1 lg:hover:-translate-y-1"
+              className="group relative shrink-0 snap-center overflow-hidden rounded-[28px] bg-foreground shadow-soft"
               style={{
-                width: isMobile ? "calc(100vw - 80px)" : "220px",
+                width: isMobile ? "calc(100vw - 110px)" : "220px",
                 height: isMobile ? "min(70vh, 600px)" : "390px",
               }}
             >
