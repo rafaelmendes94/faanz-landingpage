@@ -1014,7 +1014,7 @@ const LandingPage = () => {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-5xl px-5 pb-24 lg:px-8">
+      <section id="faq" className="mx-auto max-w-5xl px-5 pt-20 pb-24 lg:px-8 lg:pt-28">
         <div className="text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--brand-blue))]/20 bg-card px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--brand-blue))] shadow-soft">
             FAQ
