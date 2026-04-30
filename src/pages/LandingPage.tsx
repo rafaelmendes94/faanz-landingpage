@@ -239,12 +239,20 @@ const StoriesCarousel = () => {
     });
   }, [activeIdx, isMobile]);
 
+  const scrollByCard = (dir: 1 | -1) => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const first = scroller.children[0] as HTMLElement | undefined;
+    const cardW = first ? first.offsetWidth + 16 /* gap */ : 240;
+    scroller.scrollBy({ left: dir * cardW, behavior: "smooth" });
+  };
+
   return (
-    <div className="mt-10">
+    <div className="relative mt-10">
       <div className="-mx-5 lg:mx-0">
         <div
           ref={scrollerRef}
-          className="flex gap-4 overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-hide lg:px-0"
+          className="flex cursor-grab gap-4 overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-hide active:cursor-grabbing lg:px-0"
         >
           {STORIES.map((src, i) => (
             <article
@@ -297,6 +305,24 @@ const StoriesCarousel = () => {
           ))}
         </div>
       </div>
+
+      {/* Setas de navegação — desktop */}
+      <button
+        type="button"
+        onClick={() => scrollByCard(-1)}
+        aria-label="Anterior"
+        className="absolute -left-4 top-[185px] hidden h-11 w-11 items-center justify-center rounded-full border border-border bg-card shadow-soft transition-all hover:-translate-y-0.5 hover:bg-background lg:flex"
+      >
+        <ArrowRight className="h-5 w-5 rotate-180" />
+      </button>
+      <button
+        type="button"
+        onClick={() => scrollByCard(1)}
+        aria-label="Próximo"
+        className="absolute -right-4 top-[185px] hidden h-11 w-11 items-center justify-center rounded-full border border-border bg-card shadow-soft transition-all hover:-translate-y-0.5 hover:bg-background lg:flex"
+      >
+        <ArrowRight className="h-5 w-5" />
+      </button>
 
       {/* Barrinhas segmentadas estilo stories do Insta — abaixo dos vídeos */}
       <div className="mt-5 flex items-center justify-center gap-1.5 px-5">
