@@ -29,17 +29,13 @@ import {
   Youtube,
   Zap,
 } from "lucide-react";
+import { FileCheck2, Activity } from "lucide-react";
+import PhoneFrame from "@/components/app-showcase/PhoneFrame";
 import {
-  Bell,
-  FileCheck2,
-  Search,
-  Activity,
-  Home as HomeIcon,
-  Heart as HeartIcon,
-  Bed,
-  Bath,
-  Square as SquareIcon,
-} from "lucide-react";
+  PhoneScreenHome,
+  PhoneScreenDetail,
+  PhoneScreenEarnings,
+} from "@/components/app-showcase/PhoneScreens";
 import Logo from "@/components/Logo";
 import faanzLogo from "@/assets/faanz-logo.png";
 import ambassador from "@/assets/landing-ambassador.jpg";
