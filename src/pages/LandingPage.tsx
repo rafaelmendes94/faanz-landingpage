@@ -974,6 +974,40 @@ const LandingPage = () => {
                 </div>
               ))}
             </div>
+
+            {/* Download buttons */}
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <a
+                href="#"
+                aria-label="Baixar na App Store"
+                className="group inline-flex items-center gap-3 rounded-2xl bg-foreground px-4 py-2.5 text-background transition hover:opacity-90"
+              >
+                <svg viewBox="0 0 384 512" className="h-6 w-6 fill-current" aria-hidden>
+                  <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM256.7 99.4c20.4-24.2 36.4-58.3 32.4-92.4-30 1.8-66.3 20.6-87.4 45.3-19 22.7-35.1 56.8-30.4 91.5 31.5 1 65.7-12 78.4-44.4z"/>
+                </svg>
+                <span className="flex flex-col leading-tight">
+                  <span className="text-[10px] font-medium opacity-80">Baixe na</span>
+                  <span className="text-sm font-semibold">App Store</span>
+                </span>
+              </a>
+
+              <a
+                href="#"
+                aria-label="Disponível no Google Play"
+                className="group inline-flex items-center gap-3 rounded-2xl bg-foreground px-4 py-2.5 text-background transition hover:opacity-90"
+              >
+                <svg viewBox="0 0 512 512" className="h-6 w-6" aria-hidden>
+                  <path fill="#34A853" d="M48 480c-9 0-17-3-23-8l212-213 70 70-237 137c-7 9-15 14-22 14z"/>
+                  <path fill="#FBBC04" d="M392 224l-75-43-75 75 86 86 64-37c20-12 32-29 32-41s-12-29-32-40z"/>
+                  <path fill="#4285F4" d="M25 41c-5 6-9 14-9 24v382c0 9 3 18 9 25l219-219z"/>
+                  <path fill="#EA4335" d="M246 254L34 41c6-5 14-9 22-9 7 0 15 4 23 10l243 140-76 72z"/>
+                </svg>
+                <span className="flex flex-col leading-tight">
+                  <span className="text-[10px] font-medium opacity-80">Disponível no</span>
+                  <span className="text-sm font-semibold">Google Play</span>
+                </span>
+              </a>
+            </div>
           </div>
 
           {/* RIGHT — Phone mockups */}
