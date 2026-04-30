@@ -30,6 +30,7 @@ import {
   Zap,
 } from "lucide-react";
 import Logo from "@/components/Logo";
+import faanzLogo from "@/assets/faanz-logo.png";
 import ambassador from "@/assets/landing-ambassador.jpg";
 import dashboard from "@/assets/dashboard-building.jpg";
 import heroAthlete from "@/assets/landing-athlete.png";
@@ -510,11 +511,28 @@ const LandingPage = () => {
                   />
                   {/* Subtle overlay */}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
+                  {/* Instagram-style segmented progress bars */}
+                  <div className="absolute left-3 right-3 top-2.5 flex gap-1">
+                    {Array.from({ length: 5 }).map((_, idx) => (
+                      <span
+                        key={idx}
+                        className={
+                          "h-[2.5px] flex-1 rounded-full " +
+                          (idx === 0 ? "bg-white" : "bg-white/40")
+                        }
+                      />
+                    ))}
+                  </div>
                   {/* Header — avatar + handle (insta vibe) */}
-                  <div className="absolute left-3 right-3 top-3 flex items-center gap-2">
-                    <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[2px]">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-foreground">
-                        <Logo size="sm" />
+                  <div className="absolute left-3 right-3 top-6 flex items-center gap-2">
+                    <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[1.5px]">
+                      <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
+                        <img
+                          src={faanzLogo}
+                          alt="Faanz"
+                          className="h-3.5 w-auto select-none"
+                          draggable={false}
+                        />
                       </div>
                     </div>
                     <span className="text-xs font-semibold text-white drop-shadow">@faanz</span>
