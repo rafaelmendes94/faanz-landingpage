@@ -275,10 +275,10 @@ const LandingPage = () => {
           className="pointer-events-none absolute inset-0 hidden h-full w-full select-none object-cover object-right lg:block"
         />
 
-        {/* Soft fade at the bottom to blend hero into next section */}
+        {/* Strong fade right at the seam to eliminate the hard cut */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 -bottom-24 h-[360px] bg-gradient-to-b from-transparent via-white/70 to-background"
+          className="pointer-events-none absolute inset-x-0 -bottom-1 h-[220px] bg-gradient-to-b from-transparent via-white to-background"
         />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pt-[440px] pb-14 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-24 lg:pt-24">
