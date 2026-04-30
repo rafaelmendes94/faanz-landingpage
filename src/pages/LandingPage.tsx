@@ -485,61 +485,61 @@ const LandingPage = () => {
         <div className="mt-10 -mx-5 px-5 lg:mx-0 lg:px-0">
           <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
             {STORIES.map((src, i) => (
-              <article
-                key={src}
-                className="group relative shrink-0 snap-start overflow-hidden rounded-[28px] bg-foreground shadow-soft transition-transform hover:-translate-y-1"
-                style={{ width: "220px", height: "390px" }}
-              >
-                {/* Instagram-style gradient ring */}
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -inset-[2px] rounded-[30px] opacity-90"
-                  style={{
-                    background:
-                      "conic-gradient(from 180deg at 50% 50%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #feda75)",
-                  }}
-                />
-                <div className="relative h-full w-full overflow-hidden rounded-[26px] bg-foreground">
-                  <video
-                    src={src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className="h-full w-full object-cover"
-                  />
-                  {/* Subtle overlay */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
-                  {/* Instagram-style segmented progress bars */}
-                  <div className="absolute left-3 right-3 top-2.5 flex gap-1">
-                    {Array.from({ length: 5 }).map((_, idx) => (
-                      <span
-                        key={idx}
-                        className={
-                          "h-[2.5px] flex-1 rounded-full " +
-                          (idx === 0 ? "bg-white" : "bg-white/40")
-                        }
+              <div key={src} className="shrink-0 snap-start" style={{ width: "220px" }}>
+                {/* Header — avatar + handle (fora do vídeo, tom cinza) */}
+                <div className="mb-2 flex items-center gap-2 px-1">
+                  <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[1.5px]">
+                    <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
+                      <img
+                        src={faanzLogo}
+                        alt="Faanz"
+                        className="h-3.5 w-auto select-none"
+                        draggable={false}
                       />
-                    ))}
-                  </div>
-                  {/* Header — avatar + handle (insta vibe) */}
-                  <div className="absolute left-3 right-3 top-6 flex items-center gap-2">
-                    <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[1.5px]">
-                      <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
-                        <img
-                          src={faanzLogo}
-                          alt="Faanz"
-                          className="h-3.5 w-auto select-none"
-                          draggable={false}
-                        />
-                      </div>
                     </div>
-                    <span className="text-xs font-semibold text-white drop-shadow">@faanz</span>
-                    <span className="ml-auto text-[10px] font-medium text-white/80">{i + 1}h</span>
                   </div>
+                  <span className="text-xs font-semibold text-muted-foreground">@faanz</span>
+                  <span className="ml-auto text-[10px] font-medium text-muted-foreground/70">{i + 1}h</span>
                 </div>
-              </article>
+
+                <article
+                  className="group relative overflow-hidden rounded-[28px] bg-foreground shadow-soft transition-transform hover:-translate-y-1"
+                  style={{ height: "390px" }}
+                >
+                  {/* Instagram-style gradient ring */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -inset-[2px] rounded-[30px] opacity-90"
+                    style={{
+                      background:
+                        "conic-gradient(from 180deg at 50% 50%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5, #feda75)",
+                    }}
+                  />
+                  <div className="relative h-full w-full overflow-hidden rounded-[26px] bg-foreground">
+                    <video
+                      src={src}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="h-full w-full object-cover"
+                    />
+                    {/* Instagram-style segmented progress bars */}
+                    <div className="absolute left-3 right-3 top-2.5 flex gap-1">
+                      {Array.from({ length: 5 }).map((_, idx) => (
+                        <span
+                          key={idx}
+                          className={
+                            "h-[2.5px] flex-1 rounded-full " +
+                            (idx === 0 ? "bg-white" : "bg-white/40")
+                          }
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              </div>
             ))}
           </div>
         </div>
