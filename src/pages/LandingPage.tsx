@@ -34,7 +34,7 @@ import ambassador from "@/assets/landing-ambassador.jpg";
 import dashboard from "@/assets/dashboard-building.jpg";
 import heroAthlete from "@/assets/landing-athlete.png";
 import heroSkyline from "@/assets/landing-skyline.png";
-import heroBg from "@/assets/hero-desktop.jpg";
+import heroBg from "@/assets/hero-desktop.svg";
 import heroBgMobile from "@/assets/landing-hero-bg-mobile.png";
 import p1 from "@/assets/property-1.jpg";
 import p2 from "@/assets/property-2.jpg";
@@ -278,7 +278,7 @@ const LandingPage = () => {
         {/* Soft white fade at the bottom to blend hero into next section */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-[380px] bg-gradient-to-b from-transparent via-white/85 to-white"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-[200px] bg-gradient-to-b from-transparent via-white/40 to-white/80"
         />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pt-[440px] pb-14 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-24 lg:pt-24">
