@@ -30,12 +30,7 @@ import {
   Zap,
 } from "lucide-react";
 import { FileCheck2, Activity } from "lucide-react";
-import PhoneFrame from "@/components/app-showcase/PhoneFrame";
-import {
-  PhoneScreenHome,
-  PhoneScreenDetail,
-  PhoneScreenEarnings,
-} from "@/components/app-showcase/PhoneScreens";
+import appMockup from "@/assets/app-mockup.png";
 import Logo from "@/components/Logo";
 import faanzLogo from "@/assets/faanz-logo.png";
 import ambassador from "@/assets/landing-ambassador.jpg";
@@ -993,7 +988,7 @@ const LandingPage = () => {
           </div>
 
           {/* RIGHT — Phone mockups */}
-          <div className="relative mx-auto flex h-[560px] w-full max-w-xl items-end justify-center lg:h-[620px]">
+          <div className="relative mx-auto flex w-full max-w-xl items-center justify-center">
             {/* Soft blue glow */}
             <div
               aria-hidden
@@ -1004,27 +999,12 @@ const LandingPage = () => {
               }}
             />
 
-            {/* Left phone */}
-            <PhoneFrame
-              className="absolute left-0 bottom-6 z-10 w-[180px] -rotate-[6deg] sm:w-[200px] lg:w-[220px]"
-            >
-              <PhoneScreenHome />
-            </PhoneFrame>
-
-            {/* Right phone */}
-            <PhoneFrame
-              className="absolute right-0 bottom-6 z-10 w-[180px] rotate-[6deg] sm:w-[200px] lg:w-[220px]"
-            >
-              <PhoneScreenEarnings />
-            </PhoneFrame>
-
-            {/* Center phone — main */}
-            <PhoneFrame
-              className="relative z-20 w-[230px] sm:w-[260px] lg:w-[290px]"
-              elevated
-            >
-              <PhoneScreenDetail />
-            </PhoneFrame>
+            <img
+              src={appMockup}
+              alt="Aplicativo Faanz Real Estate em três telas: Meus Projetos, Investir e catálogo de imóveis"
+              className="relative z-10 w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(15,23,42,0.18)]"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
