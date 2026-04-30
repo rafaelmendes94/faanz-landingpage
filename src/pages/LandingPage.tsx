@@ -477,7 +477,7 @@ const LandingPage = () => {
               <Sparkles className="h-3.5 w-3.5" /> Destaques
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Destaques</h2>
-            <p className="mt-2 text-muted-foreground">Os bastidores e melhores momentos da Faanz</p>
+            <p className="mt-2 text-muted-foreground">Destaque dos empreendimentos disponíveis na plataforma</p>
           </div>
         </div>
 
