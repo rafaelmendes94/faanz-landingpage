@@ -30,6 +30,7 @@ import {
   Zap,
 } from "lucide-react";
 import Logo from "@/components/Logo";
+import faanzLogo from "@/assets/faanz-logo.png";
 import ambassador from "@/assets/landing-ambassador.jpg";
 import dashboard from "@/assets/dashboard-building.jpg";
 import heroAthlete from "@/assets/landing-athlete.png";
