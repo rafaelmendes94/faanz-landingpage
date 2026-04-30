@@ -918,9 +918,9 @@ const LandingPage = () => {
           }}
         />
 
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
-          {/* LEFT — Content */}
-          <div>
+        <div className="mx-auto flex max-w-7xl flex-col items-stretch gap-10 px-5 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
+          {/* LEFT (top on mobile) — Intro */}
+          <div className="order-1 lg:order-none lg:col-start-1 lg:row-start-1">
             <span className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--brand-blue))]/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--brand-blue))]">
               <Smartphone className="h-3.5 w-3.5" /> App Faanz
             </span>
@@ -934,8 +934,31 @@ const LandingPage = () => {
             <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
               Acesse um marketplace completo com lançamentos, pré-lançamentos e incorporações em um só lugar.
             </p>
+          </div>
 
-            <ul className="mt-8 space-y-3.5">
+          {/* RIGHT — Phone mockup (appears after description on mobile) */}
+          <div className="order-2 relative mx-auto flex w-full max-w-xl items-center justify-center lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1">
+            {/* Soft blue glow */}
+            <div
+              aria-hidden
+              className="absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 blur-3xl"
+              style={{
+                background:
+                  "radial-gradient(circle, hsl(var(--brand-blue) / 0.18), transparent 70%)",
+              }}
+            />
+
+            <img
+              src={appMockup}
+              alt="Aplicativo Faanz Real Estate em três telas: Meus Projetos, Investir e catálogo de imóveis"
+              className="relative z-10 w-[115%] max-w-none h-auto object-contain animate-[float_6s_ease-in-out_infinite] drop-shadow-[0_50px_70px_rgba(29,78,216,0.25)] lg:w-[120%]"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Features + Download (below image on mobile) */}
+          <div className="order-3 lg:order-none lg:col-start-1 lg:row-start-2">
+            <ul className="space-y-3.5 lg:mt-8">
               {[
                 { icon: Layers, text: "Catálogo com bilhões em VGV" },
                 { icon: Sparkles, text: "Acesso antecipado a oportunidades exclusivas" },
@@ -985,26 +1008,6 @@ const LandingPage = () => {
                 </span>
               </a>
             </div>
-          </div>
-
-          {/* RIGHT — Phone mockups */}
-          <div className="relative mx-auto flex w-full max-w-xl items-center justify-center">
-            {/* Soft blue glow */}
-            <div
-              aria-hidden
-              className="absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 blur-3xl"
-              style={{
-                background:
-                  "radial-gradient(circle, hsl(var(--brand-blue) / 0.18), transparent 70%)",
-              }}
-            />
-
-            <img
-              src={appMockup}
-              alt="Aplicativo Faanz Real Estate em três telas: Meus Projetos, Investir e catálogo de imóveis"
-              className="relative z-10 w-[115%] max-w-none h-auto object-contain animate-[float_6s_ease-in-out_infinite] drop-shadow-[0_50px_70px_rgba(29,78,216,0.25)] lg:w-[120%]"
-              loading="lazy"
-            />
           </div>
         </div>
       </section>
