@@ -295,9 +295,19 @@ const StoriesCarousel = () => {
     };
   }, []);
 
+  const scrollToIndex = (idx: number) => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const child = scroller.children[idx] as HTMLElement | undefined;
+    if (!child) return;
+    const target = child.offsetLeft - (scroller.clientWidth - child.offsetWidth) / 2;
+    scroller.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
+  };
+
   return (
     <div className="relative mt-10">
-      <div className="-mx-5 lg:mx-0">
+      {/* Mobile: bleeds both sides. Desktop: alinha à esquerda no max-w-7xl, bleeds só à direita */}
+      <div className="-mx-5 lg:mx-0 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))]">
         <div
           ref={scrollerRef}
           className="flex cursor-grab select-none gap-4 overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-hide active:cursor-grabbing lg:px-0"
@@ -357,13 +367,16 @@ const StoriesCarousel = () => {
         </div>
       </div>
 
-      {/* Barrinhas segmentadas estilo stories do Insta — abaixo dos vídeos */}
+      {/* Barrinhas segmentadas estilo stories do Insta — clicáveis */}
       <div className="mt-5 flex items-center justify-center gap-1.5 px-5">
         {STORIES.map((_, i) => (
-          <span
+          <button
             key={i}
+            type="button"
+            onClick={() => scrollToIndex(i)}
+            aria-label={`Ir para vídeo ${i + 1}`}
             className={
-              "h-[3px] rounded-full transition-all duration-300 " +
+              "h-[3px] rounded-full transition-all duration-300 hover:bg-foreground/60 " +
               (i === activeIdx ? "w-8 bg-foreground" : "w-5 bg-foreground/25")
             }
           />
