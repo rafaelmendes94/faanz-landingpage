@@ -528,7 +528,7 @@ const LandingPage = () => {
                     <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[1.5px]">
                       <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
                         <img
-                          src="/src/assets/faanz-logo.png"
+                          src={faanzLogo}
                           alt="Faanz"
                           className="h-3.5 w-auto select-none"
                           draggable={false}
