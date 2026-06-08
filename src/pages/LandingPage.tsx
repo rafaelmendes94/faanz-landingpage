@@ -30,7 +30,8 @@ import {
   Zap,
 } from "lucide-react";
 import { FileCheck2, Activity } from "lucide-react";
-import appMockup from "@/assets/app-mockup.png";
+import appMockupAsset from "@/assets/app-mockup-v2.png.asset.json";
+const appMockup = appMockupAsset.url;
 import Logo from "@/components/Logo";
 import zuuuwLogo from "@/assets/zuuuw-logo.png.asset.json";
 import ambassador from "@/assets/landing-ambassador.jpg";
