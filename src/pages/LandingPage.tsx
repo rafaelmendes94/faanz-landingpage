@@ -164,9 +164,9 @@ const CALC_ROWS = [
 ];
 
 const FAQS = [
-  { q: "Como a Faanz é diferente de outras plataformas?", a: "Combinamos a chancela e autoridade de marca de Neymar com um catálogo curado, gestor dedicado e comissão integral paga em até 5 dias úteis via PIX." },
+  { q: "Como a Zuuuw é diferente de outras plataformas?", a: "Combinamos a chancela e autoridade de marca de Neymar com um catálogo curado, gestor dedicado e comissão integral paga em até 5 dias úteis via PIX." },
   { q: "Qual é o prazo para receber a comissão?", a: "Em até 5 dias úteis após o fechamento, direto na sua conta via PIX. Prazo cumprido sempre." },
-  { q: "Posso trabalhar com minha imobiliária?", a: "Sim. Você mantém sua atuação atual e usa a Faanz como uma camada extra de oportunidades premium e suporte." },
+  { q: "Posso trabalhar com minha imobiliária?", a: "Sim. Você mantém sua atuação atual e usa a Zuuuw como uma camada extra de oportunidades premium e suporte." },
   { q: "Como funciona o acesso a pré-lançamentos?", a: "Pré-lançamentos exclusivos são liberados primeiro para o Plano Ouro, com documentação completa e acesso direto à construtora." },
   { q: "Quanto tempo leva para recuperar o investimento do Ouro?", a: "Com a média de 3 vendas/mês no plano Ouro, o investimento se paga em uma única venda — sobrando lucro líquido a partir do primeiro mês." },
   { q: "Os empreendimentos são seguros?", a: "Todos passam por análise jurídica e documental. Você só vê o que já foi verificado pela nossa equipe." },
