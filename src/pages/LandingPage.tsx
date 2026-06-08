@@ -32,7 +32,7 @@ import {
 import { FileCheck2, Activity } from "lucide-react";
 import appMockup from "@/assets/app-mockup.png";
 import Logo from "@/components/Logo";
-import faanzLogo from "@/assets/faanz-logo.png";
+import zuuuwLogo from "@/assets/zuuuw-logo.png.asset.json";
 import ambassador from "@/assets/landing-ambassador.jpg";
 import dashboard from "@/assets/dashboard-building.jpg";
 import heroAthlete from "@/assets/landing-athlete.png";
@@ -164,9 +164,9 @@ const CALC_ROWS = [
 ];
 
 const FAQS = [
-  { q: "Como a Faanz é diferente de outras plataformas?", a: "Combinamos a chancela e autoridade de marca de Neymar com um catálogo curado, gestor dedicado e comissão integral paga em até 5 dias úteis via PIX." },
+  { q: "Como a Zuuuw é diferente de outras plataformas?", a: "Combinamos a chancela e autoridade de marca de Neymar com um catálogo curado, gestor dedicado e comissão integral paga em até 5 dias úteis via PIX." },
   { q: "Qual é o prazo para receber a comissão?", a: "Em até 5 dias úteis após o fechamento, direto na sua conta via PIX. Prazo cumprido sempre." },
-  { q: "Posso trabalhar com minha imobiliária?", a: "Sim. Você mantém sua atuação atual e usa a Faanz como uma camada extra de oportunidades premium e suporte." },
+  { q: "Posso trabalhar com minha imobiliária?", a: "Sim. Você mantém sua atuação atual e usa a Zuuuw como uma camada extra de oportunidades premium e suporte." },
   { q: "Como funciona o acesso a pré-lançamentos?", a: "Pré-lançamentos exclusivos são liberados primeiro para o Plano Ouro, com documentação completa e acesso direto à construtora." },
   { q: "Quanto tempo leva para recuperar o investimento do Ouro?", a: "Com a média de 3 vendas/mês no plano Ouro, o investimento se paga em uma única venda — sobrando lucro líquido a partir do primeiro mês." },
   { q: "Os empreendimentos são seguros?", a: "Todos passam por análise jurídica e documental. Você só vê o que já foi verificado pela nossa equipe." },
@@ -353,14 +353,14 @@ const StoriesCarousel = () => {
                   <div className="rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] p-[1.5px]">
                     <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
                       <img
-                        src={faanzLogo}
-                        alt="Faanz"
+                        src={zuuuwLogo.url}
+                        alt="Zuuuw"
                         className="h-3.5 w-auto select-none"
                         draggable={false}
                       />
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-white drop-shadow">@faanz.realestate</span>
+                  <span className="text-xs font-semibold text-white drop-shadow">@zuuuw.realestate</span>
                   <span className="ml-auto text-[10px] font-medium text-white/80">{i + 1}h</span>
                 </div>
               </div>
@@ -417,7 +417,7 @@ const LandingPage = () => {
       {/* NAVBAR */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
-          <Link to="/" aria-label="Faanz Real Estate">
+          <Link to="/" aria-label="Zuuuw">
             <Logo size="md" />
           </Link>
 
@@ -497,7 +497,7 @@ const LandingPage = () => {
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pt-[440px] pb-14 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-24 lg:pt-24">
           <div className="relative z-10 text-center lg:text-left">
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--brand-blue))]/20 bg-card px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-[hsl(var(--brand-blue))] shadow-soft">
-              <Sparkles className="h-3.5 w-3.5" /> Plataforma oficial Faanz
+              <Sparkles className="h-3.5 w-3.5" /> Plataforma oficial Zuuuw
             </span>
 
             <h1 className="mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-[54px]">
@@ -695,12 +695,12 @@ const LandingPage = () => {
               Está escolhendo um parceiro. Um especialista. Uma marca que vai estar ao seu lado.
             </p>
             <p className="mt-3 text-base font-semibold text-foreground">
-              A Faanz foi criada com essa responsabilidade em mente.
+              A Zuuuw foi criada com essa responsabilidade em mente.
             </p>
           </div>
 
           <div className="mt-8 lg:mt-16">
-            <h3 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">Por que escolher a Faanz</h3>
+            <h3 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">Por que escolher a Zuuuw</h3>
 
             <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-10">
               {ADVANTAGES.map((a) => {
@@ -844,7 +844,7 @@ const LandingPage = () => {
             <h4 className="text-sm font-bold">Suporte ao cliente</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li><span className="font-semibold text-foreground">WhatsApp:</span> +55 32 98426-4682</li>
-              <li><span className="font-semibold text-foreground">E-mail:</span> suporte@faanz.com.br</li>
+              <li><span className="font-semibold text-foreground">E-mail:</span> suporte@zuuuw.com.br</li>
               <li><span className="font-semibold text-foreground">Atendimento:</span> Segunda a sexta, 9h às 18h</li>
             </ul>
           </div>
@@ -922,7 +922,7 @@ const LandingPage = () => {
           {/* LEFT (top on mobile) — Intro */}
           <div className="order-1 lg:order-none lg:col-start-1 lg:row-start-1">
             <span className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--brand-blue))]/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--brand-blue))]">
-              <Smartphone className="h-3.5 w-3.5" /> App Faanz
+              <Smartphone className="h-3.5 w-3.5" /> App Zuuuw
             </span>
 
             <h2 className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[44px] lg:leading-[1.05]">
@@ -950,7 +950,7 @@ const LandingPage = () => {
 
             <img
               src={appMockup}
-              alt="Aplicativo Faanz Real Estate em três telas: Meus Projetos, Investir e catálogo de imóveis"
+              alt="Aplicativo Zuuuw em três telas: Meus Projetos, Investir e catálogo de imóveis"
               className="relative z-10 w-[115%] max-w-none h-auto object-contain animate-[float_6s_ease-in-out_infinite] drop-shadow-[0_50px_70px_rgba(29,78,216,0.25)] lg:w-[120%]"
               loading="lazy"
             />
@@ -1084,7 +1084,7 @@ const LandingPage = () => {
             <h5 className="text-sm font-bold">Contato & Suporte</h5>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li>+55 32 98426-4682</li>
-              <li>suporte@faanz.com.br</li>
+              <li>suporte@zuuuw.com.br</li>
               <li>Seg a Sex · 9h às 18h</li>
             </ul>
           </div>
@@ -1099,7 +1099,7 @@ const LandingPage = () => {
             </ul>
           </div>
           <div>
-            <h5 className="text-sm font-bold">Siga a Faanz</h5>
+            <h5 className="text-sm font-bold">Siga a Zuuuw</h5>
             <div className="mt-4 flex gap-2">
               {[Instagram, Linkedin, Youtube, Facebook].map((Icon, i) => (
                 <a key={i} href="#" className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-[hsl(var(--brand-blue))] hover:bg-[hsl(var(--brand-blue))]/10">
@@ -1111,7 +1111,7 @@ const LandingPage = () => {
         </div>
         <div className="border-t border-border">
           <p className="mx-auto max-w-7xl px-5 py-5 text-center text-xs text-muted-foreground lg:px-8">
-            © 2026 Faanz. Todos os direitos reservados.
+            © 2026 Zuuuw. Todos os direitos reservados.
           </p>
         </div>
       </footer>

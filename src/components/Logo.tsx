@@ -1,4 +1,4 @@
-import faanzLogo from "@/assets/faanz-logo.png";
+import zuuuwLogo from "@/assets/zuuuw-logo.png.asset.json";
 
 type LogoProps = {
   size?: "sm" | "md" | "lg";
@@ -18,8 +18,8 @@ const Logo = ({ size = "md", variant = "brand", className = "" }: LogoProps) => 
   return (
     <div className={"inline-flex items-center " + className}>
       <img
-        src={faanzLogo}
-        alt="Faanz Real Estate"
+        src={zuuuwLogo.url}
+        alt="Zuuuw"
         className={
           HEIGHTS[size] +
           " w-auto select-none " +
