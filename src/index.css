@@ -49,11 +49,11 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    /* Zuuuw brand - blues only */
-    --brand-blue: 222 89% 58%;
-    --brand-blue-deep: 230 85% 48%;
-    --brand-blue-light: 210 100% 70%;
-    --brand-blue-glow: 210 100% 65%;
+    /* Zuuuw brand - blues only (#021F85 base) */
+    --brand-blue: 229 97% 26%;
+    --brand-blue-deep: 229 97% 18%;
+    --brand-blue-light: 229 85% 45%;
+    --brand-blue-glow: 229 90% 60%;
     --brand-foreground: 0 0% 100%;
 
     /* Neutral tokens */
